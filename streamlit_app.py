@@ -92,7 +92,7 @@ with player:
     """
     fig.add_layout_image(
         dict(
-            source="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/logo_nies.png",
+            source="static/logo_nies.png",
             xref="paper",
             yref="paper",
             x=1,
