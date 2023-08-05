@@ -7,9 +7,9 @@ import streamlit as st
 larga = pd.read_csv("static/larga_player.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
-source = larga[larga.Player == "J. Musiala"]
+player_t = larga[larga.Player == "J. Musiala"]
 fig = px.bar_polar(
-    source,
+    player_t,
     r="deciles",
     theta="variable",
     color="type_variable",  # Usar el nombre de la categoría para el color
@@ -36,7 +36,7 @@ with league:
 
     La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
-    st.altair_chart(fig)
+    st.plotly_chart(fig)
 
 with team:
     st.subheader("Gráficas de consistencia")
