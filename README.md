@@ -1,5 +1,5 @@
 <a href="https://www.nies.futbol/"><img
-src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align="right" width="256"
+src="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/logo_nies.png" align="right" width="256"
 /></a>
 
 # Template for Streamlit projects
