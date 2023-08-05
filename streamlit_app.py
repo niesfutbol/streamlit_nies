@@ -24,8 +24,7 @@ fig.update_layout(
     polar_angularaxis_rotation=90,
     polar_angularaxis_direction="clockwise",
     polar_radialaxis_dtick=10,
-    polar_hole=0.25,
-    title_x=0.5
+    polar_hole=0.10,
 )
 
 league, team, player = st.tabs(["League", "Team", "Player"])
@@ -96,7 +95,7 @@ with player:
             source="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/logo_serie_a.png",
             xref="paper",
             yref="paper",
-            x=0.8,
+            x=0.9,
             y=1.05,
             sizex=0.2,
             sizey=0.2,
@@ -108,7 +107,7 @@ with player:
             source="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/logo_nies.png",
             xref="paper",
             yref="paper",
-            x=0.1,
+            x=0.05,
             y=0.05,
             sizex=0.2,
             sizey=0.2,
