@@ -7,13 +7,14 @@ import streamlit as st
 larga = pd.read_csv("static/larga_player.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
-player_t = larga[larga.Player == "J. Musiala"]
+radar_player = "J. Musiala"
+player_t = larga[larga.Player == radar_player]
 fig = px.bar_polar(
     player_t,
     r="deciles",
     theta="variable",
-    color="type_variable",  # Usar el nombre de la categoría para el color
-    title="Gráfica Radial de Barras Interactiva",
+    color="type_variable",
+    title=f"Gráfica Radial de Barras Interactiva de {radar_player}",
 )
 
 fig.update_traces(showlegend=False)
@@ -23,6 +24,7 @@ fig.update_layout(
     polar_angularaxis_rotation=90,
     polar_angularaxis_direction="clockwise",
     polar_radialaxis_dtick=10,
+    polar_hole=0.25,
 )
 
 league, team, player = st.tabs(["League", "Team", "Player"])
