@@ -79,18 +79,7 @@ with team:
         .configure_view(step=13, strokeWidth=0)
         .configure_axis(domain=False, labelFontSize=10)
     )
-    img = (
-        alt.Chart({"values": [{"url": "https://i.imgur.com/zHqeoHB.png"}]})
-        .mark_image(opacity=0.5)
-        .encode(
-            x=alt.value(270),
-            x2=alt.value(300),  # pixels from left
-            y=alt.value(320),
-            y2=alt.value(350),  # pixels from top
-            url="url:N",
-        )
-    )
-    st.altair_chart(alt.layer(chart, img))
+    st.altair_chart(chart)
 
 with player:
     st.subheader("Gráficas de desempeño")
