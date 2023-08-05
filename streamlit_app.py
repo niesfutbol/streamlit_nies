@@ -92,7 +92,7 @@ with player:
     """
     fig.add_layout_image(
         dict(
-            source="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg",
+            source="https://github.com/niesfutbol/streamlit_nies/blob/develop/static/logo_nies.png",
             xref="paper",
             yref="paper",
             x=1,
