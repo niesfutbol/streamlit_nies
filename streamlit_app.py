@@ -15,6 +15,7 @@ fig = px.bar_polar(
     theta="variable",
     color="type_variable",
     title=f"Gráfica Radial de Barras Interactiva de {radar_player}",
+    displaylogo=False,
 )
 
 fig.update_traces(showlegend=False)
@@ -90,6 +91,19 @@ with player:
 
     La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
+    fig.add_layout_image(
+        dict(
+            source="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png",
+            xref="paper",
+            yref="paper",
+            x=1,
+            y=1.05,
+            sizex=0.2,
+            sizey=0.2,
+            xanchor="right",
+            yanchor="bottom",
+        )
+    )
     st.plotly_chart(fig)
 
 
