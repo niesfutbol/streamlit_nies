@@ -92,15 +92,15 @@ with player:
     """
     fig.add_layout_image(
         dict(
-            source="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png",
+            source="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg",
             xref="paper",
             yref="paper",
-            x=1,
-            y=1.05,
+            x=0,
+            y=0.05,
             sizex=0.2,
             sizey=0.2,
-            xanchor="right",
-            yanchor="bottom",
+            xanchor="left",
+            yanchor="up",
         )
     )
     st.plotly_chart(fig)
