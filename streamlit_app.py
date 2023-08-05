@@ -95,12 +95,12 @@ with player:
             source="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg",
             xref="paper",
             yref="paper",
-            x=0,
-            y=0.05,
+            x=1,
+            y=1.05,
             sizex=0.2,
             sizey=0.2,
-            xanchor="left",
-            yanchor="top",
+            xanchor="right",
+            yanchor="bottom",
         )
     )
     st.plotly_chart(fig)
