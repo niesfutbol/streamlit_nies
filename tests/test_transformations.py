@@ -1,4 +1,4 @@
-import dummy_transformations as dt
+import streamlit_nies as dt
 
 
 def test_add_offset():
