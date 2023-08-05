@@ -90,7 +90,7 @@ with player:
 
     La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
-    st.altair_chart(fig)
+    st.plotly_chart(fig)
 
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
