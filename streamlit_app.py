@@ -5,7 +5,7 @@ import streamlit as st
 
 
 larga = pd.read_csv("static/larga_player.csv")
-data = pd.read_csv('static/played_minutes.csv')
+data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
 
 tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
@@ -32,26 +32,32 @@ with tab2:
     """
     teams = ["Cimarrones", "Cancún", "Mineros de Zacatecas"]
     colours = {"Cimarrones": "oranges", "Cancún": "blues", "Mineros de Zacatecas": "reds"}
-    team = st.selectbox('Selecciona un equipo:', teams)
+    team = st.selectbox("Selecciona un equipo:", teams)
     color = colours[team]
     played_minutes = data[data.team == team]
 
-# Crear el gráfico de Altair
-    chart = alt.Chart(played_minutes, title=f"Minutes Played by Player and Match: \n{team}").mark_rect().encode(
-        alt.X("match:N", sort=alt.EncodingSortField(field="date", order="ascending")).title("Match"),
-        alt.Y("player:N", sort=alt.EncodingSortField(field="minutes", op="sum", order="descending"), title = "Player"),
-        alt.Color("minutes:Q", scale=alt.Scale(scheme=color)).title("Minutes"),
-        tooltip=[
-            alt.Tooltip("match:N", title="Match"),
-            alt.Tooltip("player:N", title="Player"),
-            alt.Tooltip("minutes:Q", title="Minutes"),
-        ],
-    ).configure_view(
-        step=13,
-        strokeWidth=0
-    ).configure_axis(
-        domain=False,
-        labelFontSize=10
+    # Crear el gráfico de Altair
+    chart = (
+        alt.Chart(played_minutes, title=f"Minutes Played by Player and Match: \n{team}")
+        .mark_rect()
+        .encode(
+            alt.X("match:N", sort=alt.EncodingSortField(field="date", order="ascending")).title(
+                "Match"
+            ),
+            alt.Y(
+                "player:N",
+                sort=alt.EncodingSortField(field="minutes", op="sum", order="descending"),
+                title="Player",
+            ),
+            alt.Color("minutes:Q", scale=alt.Scale(scheme=color)).title("Minutes"),
+            tooltip=[
+                alt.Tooltip("match:N", title="Match"),
+                alt.Tooltip("player:N", title="Player"),
+                alt.Tooltip("minutes:Q", title="Minutes"),
+            ],
+        )
+        .configure_view(step=13, strokeWidth=0)
+        .configure_axis(domain=False, labelFontSize=10)
     )
     st.altair_chart(chart)
 
