@@ -1,12 +1,29 @@
 import altair as alt
 import pandas as pd
-import plotly
+import plotly.express as px
 import streamlit as st
 
 
 larga = pd.read_csv("static/larga_player.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
+source = larga[larga.Player == "J. Musiala"]
+fig = px.bar_polar(
+    source,
+    r="deciles",
+    theta="variable",
+    color="type_variable",  # Usar el nombre de la categoría para el color
+    title="Gráfica Radial de Barras Interactiva",
+)
+
+fig.update_traces(showlegend=False)
+fig.update_polars(radialaxis_showticklabels=True)
+fig.update_layout(
+    polar_radialaxis_ticksuffix="",
+    polar_angularaxis_rotation=90,
+    polar_angularaxis_direction="clockwise",
+    polar_radialaxis_dtick=10,
+)
 
 tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
 
@@ -19,6 +36,7 @@ with tab1:
 
     La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
+    st.altair_chart(fig)
 
 with tab2:
     st.subheader("Gráficas de consistencia")
