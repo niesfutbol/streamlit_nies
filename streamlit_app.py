@@ -100,7 +100,7 @@ with player:
             sizex=0.2,
             sizey=0.2,
             xanchor="left",
-            yanchor="up",
+            yanchor="top",
         )
     )
     st.plotly_chart(fig)
