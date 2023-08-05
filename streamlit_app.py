@@ -92,7 +92,7 @@ with player:
     """
     fig.add_layout_image(
         dict(
-            source="static/logo_nies.png",
+            source="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/logo_nies.png",
             xref="paper",
             yref="paper",
             x=1,
@@ -101,6 +101,16 @@ with player:
             sizey=0.2,
             xanchor="right",
             yanchor="bottom",
+        )
+    ).add_layout_image(
+        dict(
+            source="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png",
+            xref="paper",
+            yref="paper",
+            x=0,
+            y=0.05,
+            sizex=0.2,
+            sizey=0.2,
         )
     )
     st.plotly_chart(fig)
