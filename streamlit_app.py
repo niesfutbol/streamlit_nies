@@ -15,7 +15,6 @@ fig = px.bar_polar(
     theta="variable",
     color="type_variable",
     title=f"Gráfica Radial de Barras Interactiva de {radar_player}",
-    displaylogo=False,
 )
 
 fig.update_traces(showlegend=False)
