@@ -25,9 +25,9 @@ fig.update_layout(
     polar_radialaxis_dtick=10,
 )
 
-tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
+league, team, player = st.tabs(["League", "Team", "Player"])
 
-with tab1:
+with league:
     st.subheader("Gráficas de desempeño")
     """
     Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
@@ -38,7 +38,7 @@ with tab1:
     """
     st.altair_chart(fig)
 
-with tab2:
+with team:
     st.subheader("Gráficas de consistencia")
     """
     En la figura de abajo mostramos un mapa de calor.
@@ -78,5 +78,17 @@ with tab2:
         .configure_axis(domain=False, labelFontSize=10)
     )
     st.altair_chart(chart)
+
+with player:
+    st.subheader("Gráficas de desempeño")
+    """
+    Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
+    Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
+    La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
+
+    La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
+    """
+    st.altair_chart(fig)
+
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
