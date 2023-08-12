@@ -5,3 +5,11 @@ src="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/
 # Template for Streamlit projects
 
 ## Step to use
+### Local app
+``` sh
+docker-compose up app
+```
+### Develop Enviroment
+``` sh
+docker-compose run nies
+```
