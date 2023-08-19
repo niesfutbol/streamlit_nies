@@ -2,8 +2,8 @@ import plotly.express as px
 
 
 def make_bar_plot_player(larga, radar_player):
-     fig = _set_up_bar_polar(larga, radar_player)
-     return _update_bar_polar(fig)
+    fig = _set_up_bar_polar(larga, radar_player)
+    return _update_bar_polar(fig)
 
 
 def add_nies_logo(fig):
@@ -31,6 +31,8 @@ def add_nies_logo(fig):
         )
     )
     return fig
+
+
 def _set_up_bar_polar(larga, radar_player):
     player_t = larga[larga.Player == radar_player]
     fig = px.bar_polar(
