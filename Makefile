@@ -14,7 +14,8 @@ all: check coverage mutants
 		tests
 
 module = streamlit_nies
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+codecov_token = ba9f5840-913c-4257-a2e9-a2ab4eca1082
+
 
 define lint
 	pylint \
