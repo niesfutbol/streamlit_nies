@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Upadte codecov TOKEN
+- Suppress all missing import errors for all libraries.
+- Upadte codecov TOKEN.
 
 ### Changed
 
