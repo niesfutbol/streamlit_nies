@@ -13,22 +13,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Limits in the weighted xG plot.
+- Upadte codecov TOKEN
 
 ### Changed
 
-- Move logos to directory logos.
+- Move plot functions to internal module
 
 ### Removed
 
-## [0.1.0] - 2023-08-14
+## [0.1.0] - 2023-08-11
 
-### Fixed
+### Added
 
-- Move consigned data to `tests/data`.
-
-### Changed
-
-- Use API instead of consigned data.
+- Add instructions to run app and develop environments.
 
 [0.1.1]: https://github.com/niesfutbol/streamlit_nies/compare/v0.1.0...v0.1.1
